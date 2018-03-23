@@ -10,22 +10,22 @@ import {
 
 const Home = props => (
   <div>
-    <div className="App">
-      <header className="App-header">
-        <h1 className="App-title">Welcome to Doomguins</h1>
+    <div className='App'>
+      <header className='App-header'>
+        <h1 className='App-title'>Welcome to Doomguins</h1>
         <h4>Doom Doom Doooooom</h4>
       </header>
-      <pre className="App-intro">
-        .___.<br/>
-        /\ /\<br/>
-        | O\_/O |<br/>
-        / \_/ \<br/>
-        .' / \ `.<br/>
-        / _| |_ \<br/>
-        (_/ | | \_)<br/>
-        \ /<br/>
-        __\_ _/__<br/>
-        ~;/ \;~<br/>
+      <pre className='App-intro'>
+        .___.<br />
+        /\ /\<br />
+        | O\_/O |<br />
+        / \_/ \<br />
+        .' / \ `.<br />
+        / _| |_ \<br />
+        (_/ | | \_)<br />
+        \ /<br />
+        __\_ _/__<br />
+        ~;/ \;~<br />
       </pre>
       <p>Count: {props.count}</p>
 
