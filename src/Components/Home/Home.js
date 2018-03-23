@@ -1,8 +1,12 @@
 import React from "react";
 import { push } from "react-router-redux";
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { decrement, increment } from "./HomeActionReducer";
+import {
+  DECREMENT,
+  DECREMENT_REQUESTED,
+  INCREMENT,
+  INCREMENT_REQUESTED
+} from "./HomeActionReducer";
 
 const Home = props => (
   <div>
@@ -52,14 +56,26 @@ const mapStateToProps = state => ({
   isDecrementing: state.counter.isDecrementing
 });
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators(
-    {
-      increment,
-      decrement,
-      changePage: () => push("/about-us")
+const mapDispatchToProps = dispatch => {
+  return {
+    increment: () => {
+      dispatch({
+        type: INCREMENT_REQUESTED
+      });
+      dispatch({
+        type: INCREMENT
+      });
     },
-    dispatch
-  );
+    decrement: () => {
+      dispatch({
+        type: DECREMENT_REQUESTED
+      });
+      dispatch({
+        type: DECREMENT
+      });
+    },
+    changePage: () => push("/about-us")
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
