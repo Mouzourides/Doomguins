@@ -28,7 +28,7 @@ const results = [
   {name: 'The Matrix', type: 'movie'}
 ] // Let's build a file for this
 
-module.exports = function (options, callback) {
+module.exports = function () {
   const names = []
 
   results.forEach(res => {
@@ -38,15 +38,14 @@ module.exports = function (options, callback) {
       })
       const indexToReplace = getRandomEleFromArray(_.compact(indexes))
       const newName = res.name.split(' ').map((word, idx) => {
-        if (idx === indexToReplace)
-          return word[word.length - 1] === 's' ? 'Penguins' : 'Penguin'
+        if (idx === indexToReplace) return word[word.length - 1] === 's' ? 'Penguins' : 'Penguin'
         else return word
       })
       names.push(newName.join(' '))
     }
   })
 
-  callback(null, names)
+  return getRandomEleFromArray(names)
 }
 
 function getRandomEleFromArray (array) {
