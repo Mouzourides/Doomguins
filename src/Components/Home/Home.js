@@ -5,7 +5,7 @@ import {
   DECREMENT,
   DECREMENT_REQUESTED,
   INCREMENT,
-  INCREMENT_REQUESTED
+  INCREMENT_REQUESTED, TITLE_CHANGE
 } from './HomeActionReducer'
 
 const Home = props => (
@@ -27,6 +27,13 @@ const Home = props => (
         __\_ _/__<br />
         ~;/ \;~<br />
       </pre>
+      <p>{props.title}</p>
+      <p>
+        <button onClick={props.getTitle}>
+                DOOM
+        </button>
+      </p>
+
       <p>Count: {props.count}</p>
 
       <p>
@@ -53,7 +60,8 @@ const Home = props => (
 const mapStateToProps = state => ({
   count: state.counter.count,
   isIncrementing: state.counter.isIncrementing,
-  isDecrementing: state.counter.isDecrementing
+  isDecrementing: state.counter.isDecrementing,
+  title: state.counter.title
 })
 
 const mapDispatchToProps = dispatch => {
@@ -72,6 +80,11 @@ const mapDispatchToProps = dispatch => {
       })
       dispatch({
         type: DECREMENT
+      })
+    },
+    getTitle: () => {
+      dispatch({
+        type: TITLE_CHANGE
       })
     },
     changePage: () => push('/about-us')
