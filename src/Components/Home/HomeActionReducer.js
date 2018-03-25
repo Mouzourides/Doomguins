@@ -37,12 +37,8 @@ export default (state = initialState, action) => {
       }
 
     case TITLE_CHANGE:
-      var tempTitle
-      if (state.userTitle === '') {
-        tempTitle = undefined
-      } else {
-        tempTitle = [{ name: state.userTitle, type: 'movie' }]
-      }
+      const tempTitle = state.userTitle ? [{ name: state.userTitle, type: 'movie' }] : undefined
+
       return {
         ...state,
         title: generateTitle(tempTitle)

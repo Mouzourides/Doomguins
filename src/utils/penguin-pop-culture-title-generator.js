@@ -27,7 +27,7 @@ const defaultResults = [
 ] // Let's build a file for this
 
 module.exports = function (results) {
-  if (results === undefined) {
+  if (!results) {
     results = defaultResults
   }
   const names = []
