@@ -1,6 +1,6 @@
 import React from 'react'
-import { push } from 'react-router-redux'
 import { connect } from 'react-redux'
+import {history} from '../../Modules/Store'
 import {
   DECREMENT,
   DECREMENT_REQUESTED,
@@ -87,7 +87,7 @@ const mapDispatchToProps = dispatch => {
         type: TITLE_CHANGE
       })
     },
-    changePage: () => push('/about-us')
+    changePage: () => history.push('/about-us')
   }
 }
 

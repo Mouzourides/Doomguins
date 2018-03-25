@@ -43,6 +43,7 @@ export default (state = initialState, action) => {
         count: state.count - 1,
         isDecrementing: !state.isDecrementing
       }
+
     case TITLE_CHANGE:
       return {
         ...state,
