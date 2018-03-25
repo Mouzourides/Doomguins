@@ -1,6 +1,6 @@
 const _ = require('lodash')
 const WORDS_EXCLUDE = ['to', 'a', 'an', 'and', 'the', 'for', 'of'] // Numbers too?
-const results = [
+const defaultResults = [
   {name: 'Four Letter Lie', type: 'music'},
   {name: 'Emarosa', type: 'music'},
   {name: '8 Out Of 10 Cats', type: 'show'},
@@ -26,7 +26,10 @@ const results = [
   {name: 'The Matrix', type: 'movie'}
 ] // Let's build a file for this
 
-module.exports = function () {
+module.exports = function (results) {
+  if (results === undefined) {
+    results = defaultResults
+  }
   const names = []
 
   results.forEach(res => {

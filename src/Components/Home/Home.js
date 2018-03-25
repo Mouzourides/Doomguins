@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import {history} from '../../Modules/Store'
 import {
   DECREMENT,
-  DECREMENT_REQUESTED,
   INCREMENT,
-  INCREMENT_REQUESTED, TITLE_CHANGE
+  TITLE_CHANGE,
+  UPDATE_TITLE
 } from './HomeActionReducer'
 
 const Home = props => (
@@ -29,6 +29,7 @@ const Home = props => (
       </pre>
       <p>{props.title}</p>
       <p>
+        <input type='text' onChange={(e) => props.updateUserTitle(e.currentTarget.value)} />
         <button onClick={props.getTitle}>
                 DOOM
         </button>
@@ -37,13 +38,13 @@ const Home = props => (
       <p>Count: {props.count}</p>
 
       <p>
-        <button onClick={props.increment} disabled={props.isIncrementing}>
+        <button onClick={props.increment}>
           Increment
         </button>
       </p>
 
       <p>
-        <button onClick={props.decrement} disabled={props.isDecrementing}>
+        <button onClick={props.decrement}>
           Decrement
         </button>
       </p>
@@ -59,8 +60,6 @@ const Home = props => (
 
 const mapStateToProps = state => ({
   count: state.counter.count,
-  isIncrementing: state.counter.isIncrementing,
-  isDecrementing: state.counter.isDecrementing,
   title: state.counter.title
 })
 
@@ -68,16 +67,10 @@ const mapDispatchToProps = dispatch => {
   return {
     increment: () => {
       dispatch({
-        type: INCREMENT_REQUESTED
-      })
-      dispatch({
         type: INCREMENT
       })
     },
     decrement: () => {
-      dispatch({
-        type: DECREMENT_REQUESTED
-      })
       dispatch({
         type: DECREMENT
       })
@@ -85,6 +78,12 @@ const mapDispatchToProps = dispatch => {
     getTitle: () => {
       dispatch({
         type: TITLE_CHANGE
+      })
+    },
+    updateUserTitle: (value) => {
+      dispatch({
+        type: UPDATE_TITLE,
+        payload: value
       })
     },
     changePage: () => history.push('/about-us')
