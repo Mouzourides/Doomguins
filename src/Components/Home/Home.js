@@ -4,8 +4,8 @@ import {history} from '../../Modules/Store'
 import {
   DECREMENT,
   INCREMENT,
-  TITLE_CHANGE,
-  UPDATE_TITLE
+  GET_TITLE,
+  UPDATE_USER_TITLE
 } from './HomeActionReducer'
 
 const Home = props => (
@@ -77,12 +77,12 @@ const mapDispatchToProps = dispatch => {
     },
     getTitle: () => {
       dispatch({
-        type: TITLE_CHANGE
+        type: GET_TITLE
       })
     },
     updateUserTitle: (value) => {
       dispatch({
-        type: UPDATE_TITLE,
+        type: UPDATE_USER_TITLE,
         payload: value
       })
     },

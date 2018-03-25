@@ -3,8 +3,8 @@ import generateTitle from '../../utils/penguin-pop-culture-title-generator'
 // Actions
 export const INCREMENT = 'counter/INCREMENT'
 export const DECREMENT = 'counter/DECREMENT'
-export const TITLE_CHANGE = 'counter/TITLE_CHANGE'
-export const UPDATE_TITLE = 'counter/UPDATE_TITLE'
+export const GET_TITLE = 'counter/GET_TITLE'
+export const UPDATE_USER_TITLE = 'counter/UPDATE_USER_TITLE'
 
 // State
 const initialState = {
@@ -30,13 +30,13 @@ export default (state = initialState, action) => {
         isDecrementing: !state.isDecrementing
       }
 
-    case UPDATE_TITLE:
+    case UPDATE_USER_TITLE:
       return {
         ...state,
         userTitle: action.payload
       }
 
-    case TITLE_CHANGE:
+    case GET_TITLE:
       const tempTitle = state.userTitle ? [{ name: state.userTitle, type: 'movie' }] : undefined
 
       return {
