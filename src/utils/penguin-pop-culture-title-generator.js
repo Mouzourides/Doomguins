@@ -1,5 +1,3 @@
-'use strict'
-
 const _ = require('lodash')
 const WORDS_EXCLUDE = ['to', 'a', 'an', 'and', 'the', 'for', 'of'] // Numbers too?
 const results = [
