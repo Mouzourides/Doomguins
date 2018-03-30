@@ -1,19 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {history} from '../../Modules/Store'
+
 import {
   DECREMENT,
   INCREMENT,
   GET_TITLE,
   UPDATE_USER_TITLE
 } from './HomeActionReducer'
+import Button from 'antd/es/button/button'
 
 const Home = props => (
   <div>
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Welcome to Doomguins</h1>
-        <h4>Doom Doom Doooooom</h4>
+        <h4 className='App-title'>Doom Doom Doooooom</h4>
       </header>
       <pre className='App-intro'>
         .___.<br />
@@ -30,29 +32,29 @@ const Home = props => (
       <p>{props.title}</p>
       <p>
         <input type='text' onChange={(e) => props.updateUserTitle(e.currentTarget.value)} />
-        <button onClick={props.getTitle}>
+        <Button type='primary' onClick={props.getTitle}>
                 DOOM
-        </button>
+        </Button>
       </p>
 
       <p>Count: {props.count}</p>
 
       <p>
-        <button onClick={props.increment}>
+        <Button type='primary' onClick={props.increment}>
           Increment
-        </button>
+        </Button>
       </p>
 
       <p>
-        <button onClick={props.decrement}>
+        <Button type='primary' onClick={props.decrement}>
           Decrement
-        </button>
+        </Button>
       </p>
 
       <p>
-        <button onClick={() => props.changePage()}>
+        <Button type='primary' onClick={() => props.changePage()}>
           Go to about page via redux
-        </button>
+        </Button>
       </p>
     </div>
   </div>
