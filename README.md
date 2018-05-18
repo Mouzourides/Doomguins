@@ -1,2 +1,2 @@
-# Doomguins
-For that totally random xD experience. You need it. 
+# react-boilerplate 
+Some react boiler place with redux and routes to get started quickly 
