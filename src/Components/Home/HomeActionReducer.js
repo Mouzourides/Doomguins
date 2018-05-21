@@ -5,8 +5,7 @@ export const DECREMENT = 'counter/DECREMENT'
 
 // State
 const initialState = {
-  count: 0,
-  userTitle: ''
+  count: 0
 }
 
 // Reducer
