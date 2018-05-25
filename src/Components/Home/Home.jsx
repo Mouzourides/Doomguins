@@ -14,7 +14,9 @@ const Home = props => (
         <h1 className="App-title">react-boilerplate</h1>
       </header>
 
-      <p>Count: {props.count}</p>
+      <h2>
+        <b>Count:</b> {props.count}
+      </h2>
 
       <p>
         <Button type="primary" onClick={props.increment}>
@@ -30,7 +32,7 @@ const Home = props => (
 
       <p>
         <Button type="primary" onClick={() => props.changePage()}>
-          Go to about page via redux
+          About page
         </Button>
       </p>
     </div>
@@ -53,7 +55,7 @@ const mapDispatchToProps = dispatch => {
         type: DECREMENT
       });
     },
-    changePage: () => history.push("/about-us")
+    changePage: () => history.replace("/about-us")
   };
 };
 
