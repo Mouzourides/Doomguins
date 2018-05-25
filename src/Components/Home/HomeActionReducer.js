@@ -1,28 +1,15 @@
-// @flow
 // Actions
 
-import type { RootActions } from "../../Config/Actions";
-
-export type CounterAction = { type: string };
-
-function createCounterAction(typeName: string): CounterAction {
-  return { type: typeName };
-}
-
-export const INCREMENT: CounterAction = createCounterAction("INCREMENT");
-export const DECREMENT: CounterAction = createCounterAction("DECREMENT");
-
-export type State = {
-  count: number
-};
+export const INCREMENT = "INCREMENT";
+export const DECREMENT = "DECREMENT";
 
 // State
-const initialState: State = {
+const initialState = {
   count: 0
 };
 
 // Reducer
-export default (state: State = initialState, action: RootActions) => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
       return {
