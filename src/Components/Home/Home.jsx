@@ -19,9 +19,9 @@ class Home extends Component {
           <h1 className="App-title">react-boilerplate</h1>
         </header>
         <div>
-          <p>
+          <h2>
             <b>Count:</b> {this.state.count}
-          </p>
+          </h2>
           <p>
             <Button type="primary" onClick={() => this.incrementCount()}>
               Increment
