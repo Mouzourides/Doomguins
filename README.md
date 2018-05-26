@@ -19,7 +19,3 @@ Just run `git checkout react-basic`
 * Run `yarn` then `yarn start`
 * Run `yarn flow` to run flow, the static type checker
 * Start coding away!
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
