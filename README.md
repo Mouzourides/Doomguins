@@ -12,7 +12,7 @@ Just run `git checkout react-basic`
 
 ## How to use
 
-* Clone this project: `git clone git@github.com:mouzourides/react-boilerplate.git`
+* Clone this project: `git clone https://github.com/Mouzourides/react-boilerplate.git`
 * Create your own project directory
 * Copy the content from react-boilerplate to your own project directory
 * Change directory to your own project directory
